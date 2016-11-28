@@ -42,15 +42,21 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "ValidationDataType", namespace = "http://uri.etsi.org/01903/v1.4.1#", propOrder = {
+@XmlType(name = "ValidationDataType", namespace = xades4j.xml.bind.xades.ObjectFactory.URI + xades4j.xml.bind.xades.ObjectFactory.VERSION + xades4j.xml.bind.xades.ObjectFactory.SHARP, propOrder = {
     "certificateValues",
     "revocationValues"
 })
+//@XmlType(name = "ValidationDataType", namespace = "http://uri.etsi.org/01903/v1.4.1#", propOrder = {
+//    "certificateValues",
+//    "revocationValues"
+//})
 public class XmlValidationDataType {
 
-    @XmlElement(name = "CertificateValues", namespace = "http://uri.etsi.org/01903/v1.3.2#")
+//    @XmlElement(name = "CertificateValues", namespace = "http://uri.etsi.org/01903/v1.3.2#")
+    @XmlElement(name = "CertificateValues", namespace = xades4j.xml.bind.xades.ObjectFactory.URI + xades4j.xml.bind.xades.ObjectFactory.VERSION + xades4j.xml.bind.xades.ObjectFactory.SHARP)
     protected XmlCertificateValuesType certificateValues;
-    @XmlElement(name = "RevocationValues", namespace = "http://uri.etsi.org/01903/v1.3.2#")
+//    @XmlElement(name = "RevocationValues", namespace = "http://uri.etsi.org/01903/v1.3.2#")
+    @XmlElement(name = "RevocationValues", namespace = xades4j.xml.bind.xades.ObjectFactory.URI + xades4j.xml.bind.xades.ObjectFactory.VERSION + xades4j.xml.bind.xades.ObjectFactory.SHARP)
     protected XmlRevocationValuesType revocationValues;
     @XmlAttribute(name = "Id")
     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)

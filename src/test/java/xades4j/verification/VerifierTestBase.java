@@ -40,6 +40,7 @@ public class VerifierTestBase extends SignatureServicesTestBase
 {
     static SignaturePolicyDocumentProvider policyDocumentFinder;
     public static CertificateValidationProvider validationProviderMySigs;
+    public static CertificateValidationProvider validationProviderCorreos;
     public static CertificateValidationProvider validationProviderNist;
     public static CertificateValidationProvider validationProviderPtCc;
 
@@ -62,6 +63,11 @@ public class VerifierTestBase extends SignatureServicesTestBase
             FileSystemDirectoryCertStore certStore = createDirectoryCertStore("my");
             KeyStore ks = createAndLoadJKSKeyStore("my/myStore", "mystorepass");
             validationProviderMySigs = new PKIXCertificateValidationProvider(ks, false, certStore.getStore());
+
+            // Validation provider with certificates from "my" folder. Used for
+            // signatures without revocation data.
+            KeyStore ksc = createAndLoadJKSKeyStore("my/xades2.jks", "odyssey");
+            validationProviderCorreos = new PKIXCertificateValidationProvider(ksc, false, certStore.getStore());
 
             // Validation provider with certificates/CRL from "csrc.nist" folder
             // and TSA CRL. Used for signatures with complete validation data.
@@ -91,6 +97,11 @@ public class VerifierTestBase extends SignatureServicesTestBase
     protected static XAdESForm verifySignature(String sigFileName) throws Exception
     {
         return verifySignature(sigFileName, new XadesVerificationProfile(VerifierTestBase.validationProviderMySigs));
+    }
+
+    protected static XAdESForm verifySignatureCorreos(String sigFileName) throws Exception
+    {
+        return verifySignature(sigFileName, new XadesVerificationProfile(VerifierTestBase.validationProviderCorreos));
     }
 
     protected static XAdESForm verifySignature(

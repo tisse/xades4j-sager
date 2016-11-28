@@ -25,7 +25,7 @@ import xades4j.properties.QualifyingProperty;
  *
  * @author Luís
  */
-class Init
+public class Init
 {
     private Init()
     {

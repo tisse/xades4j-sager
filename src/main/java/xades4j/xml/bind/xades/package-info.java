@@ -8,5 +8,7 @@
 /**
  * JAXB classes for XAdES XML types.
  */
-@javax.xml.bind.annotation.XmlSchema(namespace = "http://uri.etsi.org/01903/v1.3.2#", elementFormDefault = javax.xml.bind.annotation.XmlNsForm.QUALIFIED)
+//@javax.xml.bind.annotation.XmlSchema(namespace = "http://uri.etsi.org/01903/v1.3.2#", elementFormDefault = javax.xml.bind.annotation.XmlNsForm.QUALIFIED)
+@javax.xml.bind.annotation.XmlSchema(namespace = xades4j.xml.bind.xades.ObjectFactory.URI + xades4j.xml.bind.xades.ObjectFactory.VERSION + xades4j.xml.bind.xades.ObjectFactory.SHARP,
+        elementFormDefault = javax.xml.bind.annotation.XmlNsForm.QUALIFIED)
 package xades4j.xml.bind.xades;

@@ -30,7 +30,7 @@ import xades4j.providers.BasicSignatureOptionsProvider;
  * signature options. The signing certificate validity and key usages are validated.
  * @author Luís
  */
-class KeyInfoBuilder
+public class KeyInfoBuilder
 {
 
     private final BasicSignatureOptionsProvider basicSignatureOptionsProvider;

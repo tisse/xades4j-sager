@@ -25,11 +25,14 @@ public interface QualifyingProperty
     /**
      * The XAdES v1.3.2 namespace URI.
      */
-    public static final String XADES_XMLNS = "http://uri.etsi.org/01903/v1.3.2#";
+//    public static final String XADES_XMLNS = "http://uri.etsi.org/01903/v1.3.2#";
+//    public static final String XADES_XMLNS = "http://uri.etsi.org/01903/v1.2.2#"; //CORREOS COMPATIBILITY
+    public static final String XADES_XMLNS = xades4j.xml.bind.xades.ObjectFactory.URI + xades4j.xml.bind.xades.ObjectFactory.VERSION + xades4j.xml.bind.xades.ObjectFactory.SHARP; //CORREOS COMPATIBILITY
     /**
      * The XAdES v1.4.1 namespaceURI.
      */
-    public static final String XADESV141_XMLNS = "http://uri.etsi.org/01903/v1.4.1#";
+//    public static final String XADESV141_XMLNS = "http://uri.etsi.org/01903/v1.4.1#";
+    public static final String XADESV141_XMLNS = xades4j.xml.bind.xades.ObjectFactory.URI + xades4j.xml.bind.xades.ObjectFactory.VERSION + xades4j.xml.bind.xades.ObjectFactory.SHARP;
     /**
      * The name of the {@code QualifyingProperties} element.
      */
@@ -45,7 +48,8 @@ public interface QualifyingProperty
     /**
      * The URI of the signed properties reference type. To be used in {@code ds:Reference}.
      */
-    public static final String SIGNED_PROPS_TYPE_URI = "http://uri.etsi.org/01903#SignedProperties";
+    //public static final String SIGNED_PROPS_TYPE_URI = "http://uri.etsi.org/01903#SignedProperties";
+    public static final String SIGNED_PROPS_TYPE_URI = "http://uri.etsi.org/01903/v1.2.2#SignedProperties"; //CORREOS COMPATIBILITY
         /**
      * The name of the {@code SignedProperties} element.
      */

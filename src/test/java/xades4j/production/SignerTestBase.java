@@ -37,6 +37,7 @@ public class SignerTestBase extends SignatureServicesTestBase
     /**/
     static protected KeyingDataProvider keyingProviderMy;
     static protected KeyingDataProvider keyingProviderNist;
+    static protected KeyingDataProvider keyingProviderXades;
 
     static protected String PTCC_PKCS11_LIB_PATH = "C:\\Windows\\System32\\pteidpkcs11.dll";
     
@@ -45,6 +46,7 @@ public class SignerTestBase extends SignatureServicesTestBase
         try
         {
             keyingProviderMy = createFileSystemKeyingDataProvider("pkcs12", "my/LG.pfx", "mykeypass", true);
+            keyingProviderXades = createFileSystemKeyingDataProvider("pkcs12", "my/xades.p12", "odyssey", true);
             keyingProviderNist = createFileSystemKeyingDataProvider("pkcs12", "csrc.nist/test4.p12", "password", false);
         } catch (KeyStoreException e)
         {
@@ -56,6 +58,8 @@ public class SignerTestBase extends SignatureServicesTestBase
     {
         return getDocument("document.xml");
     }
+
+
 
     protected static FileSystemKeyStoreKeyingDataProvider createFileSystemKeyingDataProvider(
             String keyStoreType,

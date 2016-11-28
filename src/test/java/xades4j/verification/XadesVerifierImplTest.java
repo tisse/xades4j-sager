@@ -20,6 +20,8 @@ import java.io.FileInputStream;
 import java.io.InputStream;
 import static org.junit.Assert.*;
 import static org.junit.Assume.assumeTrue;
+
+import org.apache.log4j.BasicConfigurator;
 import org.junit.Before;
 import org.junit.Test;
 import org.w3c.dom.Document;
@@ -53,6 +55,15 @@ public class XadesVerifierImplTest extends VerifierTestBase
     {
         System.out.println("verifyBES");
         XAdESForm f = verifySignature("document.signed.bes.xml");
+        assertEquals(XAdESForm.BES, f);
+    }
+
+    @Test
+    public void testVerifyBESCorreos() throws Exception
+    {
+        BasicConfigurator.configure();
+        System.out.println("verifyBESCorreos");
+        XAdESForm f = verifySignatureCorreos("correos.document.signed.bes.xml");
         assertEquals(XAdESForm.BES, f);
     }
 
