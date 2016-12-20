@@ -4,8 +4,9 @@
                jaxb:version="2.1">
   <jaxb:globalBindings>
 	 <jaxb:javaType name="byte[]" xmlType="xsd:base64Binary"
-        parseMethod="xades4j.utils.Base64.decode"
-        printMethod="xades4j.utils.Base64.encodeBytes"/>
+        parseMethod="xades4j.utils.Base64x.decode"
+        printMethod="xades4j.utils.Base64x.encodeBytes"
+     />
   </jaxb:globalBindings>
   <jaxb:bindings schemaLocation="http://www.w3.org/TR/2002/REC-xmldsig-core-20020212/xmldsig-core-schema.xsd"  node="/xsd:schema">
     <jaxb:schemaBindings>

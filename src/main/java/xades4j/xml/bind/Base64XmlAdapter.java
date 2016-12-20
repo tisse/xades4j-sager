@@ -8,6 +8,9 @@
 
 package xades4j.xml.bind;
 
+import sun.misc.BASE64Decoder;
+import sun.misc.BASE64Encoder;
+
 import java.io.IOException;
 import javax.xml.bind.annotation.adapters.XmlAdapter;
 
@@ -18,12 +21,21 @@ public class Base64XmlAdapter
 
     @Override
     public byte[] unmarshal(String value) throws Exception {
-        return (xades4j.utils.Base64.decode(value));
+//        return (xades4j.utils.Base64.decode(value));
+        BASE64Decoder base64Decoder = new BASE64Decoder();
+        try {
+            byte[] decodeBuffer = base64Decoder.decodeBuffer(value);
+            return decodeBuffer;
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return new byte[0];
     }
 
     @Override
     public String marshal(byte[] value) throws IOException {
-        return (xades4j.utils.Base64.encodeBytes(value, xades4j.utils.Base64.DO_BREAK_LINES));
+//        return (xades4j.utils.Base64.encodeBytes(value, xades4j.utils.Base64.DO_BREAK_LINES));
+        return (new BASE64Encoder().encode(value));
     }
 
 }

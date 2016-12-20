@@ -5,7 +5,7 @@
     <groupId>com.googlecode.xades4j</groupId>
     <artifactId>xades4j</artifactId>
     <packaging>jar</packaging>
-    <version>1.3.3.3-CORREOS</version>
+    <version>1.3.3.9-CORREOS</version>
     <name>xades4j</name>
     <url>https://code.google.com/p/xades4j/</url>
 
@@ -121,6 +121,18 @@
                         <configuration>
                             <repositoryId>internal.repo</repositoryId>
                         </configuration>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-source-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>attach-sources</id>
+                                <goals>
+                                    <goal>jar</goal>
+                                </goals>
+                            </execution>
+                        </executions>
                     </plugin>
                 </plugins>
             </build>

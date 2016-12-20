@@ -82,7 +82,8 @@ class XadesSignatureFormatExtenderImpl implements XadesSignatureFormatExtender
         
         // A little style trick to have nice prefixes.
         if(null == sig.getDocument().lookupPrefix(QualifyingProperty.XADESV141_XMLNS))
-            qualifProps.setAttributeNS(Constants.NamespaceSpecNS, "xmlns:xades141", QualifyingProperty.XADESV141_XMLNS);
+//            qualifProps.setAttributeNS(Constants.NamespaceSpecNS, "xmlns:xades141", QualifyingProperty.XADESV141_XMLNS);
+            qualifProps.setAttributeNS(Constants.NamespaceSpecNS, "xmlns:xades122", QualifyingProperty.XADESV141_XMLNS);
 
         unsignedPropsMarshaller.marshal(propsData, qualifProps);
     }

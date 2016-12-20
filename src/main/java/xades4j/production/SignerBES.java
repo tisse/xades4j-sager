@@ -180,7 +180,8 @@ public class SignerBES implements XadesSigner
                 signature.getDocument(),
                 QualifyingProperty.XADES_XMLNS, QualifyingProperty.QUALIFYING_PROPS_TAG);
         qualifyingPropsElem.setAttributeNS(null, QualifyingProperty.TARGET_ATTR, '#' + signatureId);
-        qualifyingPropsElem.setAttributeNS(Constants.NamespaceSpecNS, "xmlns:xades141", QualifyingProperty.XADESV141_XMLNS);
+//        qualifyingPropsElem.setAttributeNS(Constants.NamespaceSpecNS, "xmlns:xades141", QualifyingProperty.XADESV141_XMLNS);
+        qualifyingPropsElem.setAttributeNS(Constants.NamespaceSpecNS, "xmlns:xades122", QualifyingProperty.XADESV141_XMLNS);
         // ds:Object to contain QualifyingProperties
         ObjectContainer qPropsXmlObj = new ObjectContainer(signature.getDocument());
         qPropsXmlObj.appendChild(qualifyingPropsElem);

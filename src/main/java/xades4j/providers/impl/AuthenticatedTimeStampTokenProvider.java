@@ -20,7 +20,7 @@ import com.google.inject.Inject;
 import java.io.IOException;
 import java.net.HttpURLConnection;
 import xades4j.providers.MessageDigestEngineProvider;
-import xades4j.utils.Base64;
+import xades4j.utils.Base64x;
 
 /**
  * A {@link xades4j.providers.TimeStampTokenProvider} that issues time-stamp requests
@@ -40,7 +40,7 @@ public final class AuthenticatedTimeStampTokenProvider extends DefaultTimeStampT
     {
         super(messageDigestProvider, httpAuthenticationData.getTsaUrl());
         String usrAndPwd = httpAuthenticationData.getTsaUser() + ":" + httpAuthenticationData.getTsaPassword();
-        this.base64tsaUsrAndPwd = Base64.encodeBytes(usrAndPwd.getBytes());
+        this.base64tsaUsrAndPwd = Base64x.encodeBytes(usrAndPwd.getBytes());
     }
 
     @Override
